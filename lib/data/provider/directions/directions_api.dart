@@ -20,7 +20,6 @@ class ApiDirections {
       },
     );
 
-    if(response.statusCode == 200) return ModelDirections.fromMap(response.data);
-    return null;
+    return response.statusCode == 200 ? ModelDirections.fromMap(response.data) : null;
   }
 }

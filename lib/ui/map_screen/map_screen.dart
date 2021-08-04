@@ -12,7 +12,6 @@ class MapScreen extends GetView<MarkerController> {
 
   DirectionController? _directionController;
   GoogleMapController? _mapController;
-
   
   @override
   Widget build(BuildContext context) {
@@ -29,15 +28,19 @@ class MapScreen extends GetView<MarkerController> {
                 if (_.marker.origin != null) _.marker.origin,
                 if (_.marker.destination != null) _.marker.destination},
             onLongPress: _.addMarker,
-          );
-        },
+          );},
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.black,
-        onPressed: () => _mapController!.animateCamera(
-          CameraUpdate.newCameraPosition(_initialCameraPosition),
-        ),
+        onPressed: () {
+          var f = _mapController;
+          if (f != null) {
+            f.animateCamera(
+              CameraUpdate.newCameraPosition(_initialCameraPosition),
+            );
+          }
+        } ,
         child: const Icon(Icons.center_focus_strong),
       ),
     );
