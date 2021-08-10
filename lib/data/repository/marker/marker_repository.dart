@@ -1,3 +1,4 @@
+import 'package:getstarted_maps/data/model/marker/marker_model.dart';
 import 'package:getstarted_maps/data/provider/marker/marker_api.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -6,7 +7,7 @@ class MarkerRepository {
 
   MarkerRepository({required this.apiMarker});
 
-  addMarker(LatLng pos){
-    apiMarker.addMarker(pos);
+  MarkerModel addMarker(LatLng pos){
+    return apiMarker.addMarker(pos);
   }
 }

@@ -14,6 +14,6 @@ class DirectionController extends GetxController{
   set info(value) => this._info.value = value;
 
   Future<ModelDirections?> getDirections({ required LatLng origin, required LatLng destination}) async {
-    return repositoryDirections.getDirections(origin: origin, destination: destination);
+    return info = repositoryDirections.getDirections(origin: origin, destination: destination);
   }
 }

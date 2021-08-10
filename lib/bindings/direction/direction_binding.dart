@@ -6,13 +6,12 @@ import 'package:getstarted_maps/data/repository/directions/directions_repository
 class DirectionBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() {
-      return DirectionController(
+    Get.put(
+        DirectionController(
           repositoryDirections: RepositoryDirections(
-          apiDirections: ApiDirections(),
+            apiDirections: ApiDirections(),
+          ),
         ),
-      );
-    });
+        permanent: true);
   }
-
 }

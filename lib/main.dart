@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getstarted_maps/bindings/marker/marker_binding.dart';
 import 'package:getstarted_maps/routes/app_pages.dart';
 import 'package:getstarted_maps/ui/map_screen/map_screen.dart';
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.INITIAL,
+      initialBinding: MarkerBinding(),
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -23,4 +25,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
